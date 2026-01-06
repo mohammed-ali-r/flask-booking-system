@@ -1,0 +1,215 @@
+{% extends "base.html" %}
+{% block content %}
+<html>
+<head>
+    <title>Meet the animals!</title>
+    <style>
+        @font-face {
+            font-family: DK Brush;
+            src: url(BubblegumSans-Regular.ttf);
+        }
+
+        body {
+            font-family: DK Brush;
+            height: 100%;
+        }
+
+        #container {
+            width: 1300px;
+            border: 4px solid black;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 5%;
+            background-image: radial-gradient(circle 619.3px at 10% 20%, rgba(166, 223, 75, 1) 0%, rgba(255, 217, 57, 1) 100.2%);
+            font-family: DK Brush;
+        }
+
+        #container img {
+            max-width: 80%; 
+            max-height: 80%; 
+            padding: 10px;
+            border-radius: 30px;
+        }
+
+        #caption {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        button {
+            width: 100px;
+            height: 60px;
+            margin-left: 100px;
+            margin-right: 100px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-family: DK Brush;
+        }
+
+        @keyframes fadein {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .play {
+            animation: fadein .4s ease-in;
+        }
+
+        h1 {
+            font-family: DK Brush;
+        }
+
+        #container2 {
+            width: 40%;
+            float: left;
+            padding: 20px;
+            background-color: #f266ab;
+            box-shadow: 3px 2px 2px black;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin-top: 5%;
+            margin-left: 5%;
+        }
+
+        #container2 img {
+            max-width: 100%; 
+            max-height: 100%; 
+            padding: 10px;
+            border-radius: 40px;
+            padding-top: 20px;
+        }
+
+        #container2 p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-bottom: 90px; /* Adjust the padding to create space for the footer */
+}
+
+
+#container2 {
+    
+    justify-content: space-between;
+    margin-top: 70px;
+    padding-bottom: 90px; /* Adjust the padding to create space for the footer */
+}
+
+    #container3 {
+        width: 35%;
+        float: right;
+        padding: 20px;
+        background-color: #f266ab;
+        box-shadow: 3px 2px 2px black;
+        border: 2px solid black;
+        border-radius: 10px;
+        margin-top: 10%;
+        margin-right: 5%; /* Adjust margin-right for spacing */
+    }
+
+    #container3 img {
+        max-width: 100%; 
+        max-height: 100%; 
+        padding: 10px;
+        border-radius: 40px;
+        padding-top: 20px;
+    }
+
+    #container3 p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    #facvid {
+        margin-top: 20px; /* Adjust top margin for spacing */
+    }
+
+    #facvid iframe {
+        display: block; /* Make the iframe a block element */
+        margin: 0 auto; /* Center horizontally */
+    }
+
+
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <h1>Meet the animals!</h1>
+    <div id="image">
+        <img id="img" src="static\images\pgimages\1.jpg" alt="Images of animals">  <!-- Putting the image in the container then in its own div, as well as the container in its own div in the container -->
+    </div>
+    <div id="caption"> <!-- default caption -->
+        Meet Gigi the Giraffe, the tallest resident of Ridget Zoo Adventures! With her long neck and playful spirit, Gigi loves reaching for the juiciest leaves at the top of the trees. She's always on the lookout for new friends to play with and loves to show off her graceful dance moves. Join Gigi for a high-flying adventure in the sky-high canopy of Ridget Zoo! 🦒✨</div> 
+    <div id="controls">
+        <button onclick="GoBack()">Back</button> <!-- buttons for the next and prev -->
+        <button onclick="GoNext()">Next</button>
+    </div>
+</div>
+
+<div id="container2">
+    <h2>Facilities</h2>
+    <p>
+        At our amazing zoo, adventure awaits around every corner! 🐾 Get ready to embark on a wild journey filled with fascinating creatures and exciting experiences. From towering giraffes to majestic lions, and cheeky monkeys swinging from tree to tree, there's always something incredible to discover. Explore lush habitats designed to mimic the natural environments of our animal friends, and don't forget to stop by our interactive learning stations where you can get up close and personal with fascinating facts about wildlife conservation. With fun-filled playgrounds, thrilling animal shows, and delicious treats to munch on, our zoo is the ultimate playground for young explorers eager to unleash their imagination and curiosity! Get ready to roar with excitement at every turn – come join the adventure at our zoo today! 🌿🦁🐵</p>
+    <img id="facimg1" src="static\images\facimg1.jpg" alt="Image of women and lion"> 
+</div>
+
+<div id="container3">
+    
+    <p>
+        And don't forget to explore our array of family-friendly attractions, including playgrounds, picnic areas, and immersive exhibits that transport you to distant lands and ancient ecosystems. Whether you're embarking on a safari adventure, attending an animal encounter, or simply enjoying a leisurely stroll through our scenic grounds, there's something for everyone to enjoy at Ridget Zoo Adventures.
+
+Come experience the magic of the animal kingdom and create memories that will last a lifetime at Ridget Zoo Adventures. Join us in our mission to inspire, educate, and empower visitors to connect with nature and protect the precious biodiversity of our planet. We can't wait to welcome you to our zoo family!</p>
+    
+    <src id = "facvid"><iframe width="560" height="315" src="https://www.youtube.com/embed/bKkPU-hIRro?si=yKpmoyhmtJBIDahn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></src>
+</div>
+<script>
+    var num = 1; // script for next and back button loading next image and caption
+    var element = document.getElementById("img"); // setting element adn caption as variables and assigning 
+    var caption = document.getElementById("caption");
+    var descriptions = [
+        " Meet Gigi the Giraffe, the tallest resident of Ridget Zoo Adventures! With her long neck and playful spirit, Gigi loves reaching for the juiciest leaves at the top of the trees. She's always on the lookout for new friends to play with and loves to show off her graceful dance moves. Join Gigi for a high-flying adventure in the sky-high canopy of Ridget Zoo! 🦒✨",
+        "Introducing Tony, Timmy, and Tessa, the trio of tigers at Ridget Zoo Adventures! These magnificent felines are the kings and queen of the jungle gym, always prowling around with a mischievous glint in their eyes. Tony is the bold leader, Timmy is the curious explorer, and Tessa is the elegant huntress. Together, they form an unbeatable team, ready to pounce on fun and excitement at every turn. Join these three tiger siblings for a wild adventure through the jungle! 🐅🌿",
+        "Meet Ziggy the Zebra, the star of Ridget Zoo Adventures' zebra exhibit! With his striking black and white stripes and playful personality, Ziggy loves to dazzle visitors with his fancy footwork and contagious energy. He's always on the move, trotting around the savannah with grace and charm. Ziggy's favorite pastimes include playing tag with his zebra pals, munching on crunchy grass, and showing off his synchronized dance moves. Come say hello to Ziggy and join him for a hoof-tapping good time at Ridget Zoo Adventures! 🦓💃",
+        "Meet Ellie the Elephant, the gentle giant of Ridget Zoo Adventures! With her wise eyes and kind demeanor, Ellie is beloved by visitors of all ages. She enjoys leisurely strolls, tasty treats, and splashing in her favorite watering hole. Ellie's playful antics and devotion to her herd make her a favorite among zoo-goers. Come say hello to Ellie and experience the magic of interacting with one of nature's most magnificent creatures! 🐘🌿🌟",
+        "Introducing the adorable trio of baby penguins: Pebbles, Pippin, and Puddle! These fluffy little bundles of joy are the newest additions to Ridget Zoo Adventures. Pebbles is the mischievous leader, always leading the others in playful escapades. Pippin is the curious one, constantly exploring and waddling around the enclosure. Puddle is the cuddly one, often found snuggling close to Pebbles or Pippin for warmth. Together, they bring endless laughter and joy to visitors as they waddle, slide, and chirp their way through their icy habitat. Come meet these charming little penguins and embark on an adventure with them at Ridget Zoo! 🐧❄️🎉",
+        "Meet Rusty, the mischievous red panda at Ridget Zoo Adventures! With his vibrant fur and playful personality, Rusty is always up to some antics, whether it's climbing trees or rolling around in the leaves. He loves to entertain visitors with his acrobatic skills and adorable antics. Rusty's favorite pastime is snacking on bamboo shoots while perched high in the trees, where he can keep an eye on everything that's happening in his forest home. With his fluffy tail and inquisitive eyes, Rusty is sure to capture the hearts of visitors of all ages at Ridget Zoo! 🐾🎋🌿",
+    ];
+    // list of all of the captions
+
+    function GoBack() {
+        if (num > 1) {
+            num--;
+        } else {
+            num = 6;
+        }
+        PlayAnimation();
+    } // go back function ; lets it loop.
+
+    function GoNext() {
+        if (num < 6) {
+            num++;
+        } else {
+            num = 1;
+        }
+        PlayAnimation();
+    }
+    // go next function, lets it loop as well
+    function PlayAnimation() {
+        element.src = "static/images/pgimages/" + num + ".jpg";
+        caption.innerHTML = descriptions[num - 1]; // Update caption based on current image number
+        element.classList.remove("play"); // reset the animation
+        void element.offsetWidth; // trigger the reflow of img tag
+        element.classList.add("play");
+    } // animation
+</script>
+
+</body>
+</html>
+{% endblock %}

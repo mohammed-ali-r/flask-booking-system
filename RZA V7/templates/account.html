@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    /* CSS for Account Page */
+    @font-face {
+        font-family: DK Brush;
+        src: url(BubblegumSans-Regular.ttf);
+    }
+
+    body {
+        font-family: DK Brush;
+        background-color: #FFB84C;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 20px;
+        font-family: DK Brush;
+    }
+
+    .container-left {
+        max-width: 500px;
+        margin: 50px auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        font-family: DK Brush;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: #f266ab;
+        box-shadow: 3px 2px 2px black;
+        padding-bottom: 135px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: DK Brush;
+    }
+
+    table td,
+    table th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    table tr:hover {
+        background-color: #ddd;
+    }
+
+    .button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-family: DK Brush;
+        width: 450px;
+        margin-top: 10px; /* Decreased margin */
+        margin-bottom: 10px; /* Added margin bottom */
+        text-decoration: none;
+        text-align: center;
+        display: inline-block; /* Ensure buttons are displayed inline */
+    }
+
+    .button:hover {
+        background-color: #45a049;
+    }
+
+    .button.red { /* Style for the red button */
+        background-color: #ff5733; /* Red color */
+        width: 90%;
+        width: 450px;
+        margin-left: 18px;
+        
+    }
+
+    .flashes {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .flashes li {
+        background: #f4f4f4;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        font-family: DK Brush;
+    }
+
+    /* Additional styles */
+    .bookings {
+        margin-top: 20px;
+        font-family: DK Brush;
+    }
+
+    .bookings h3 {
+        margin-bottom: 10px;
+    }
+
+    .bookings ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    .bookings li {
+        font-family: DK Brush;
+        margin-bottom: 10px;
+    }
+
+</style>
+<div class="container-left">
+  <h1>Hello {{ current_user.firstname }}</h1>
+
+  <br>
+  <div>
+      {% with messages = get_flashed_messages() %}
+          {% if messages %}
+              <ul class="flashes">
+                  {% for message in messages %}
+                      <li>{{ message }}</li>
+                  {% endfor %}
+              </ul>
+          {% endif %}
+      {% endwith %}
+  </div>
+
+  <div>
+      <h2>{{ name }}</h2>
+      <table>
+          <tr>
+              <td>Email:</td>
+              <td>{{ current_user.email }}</td>
+          </tr>
+          <tr>
+              <td>First name:</td>
+              <td>{{ current_user.firstname }}</td>
+          </tr>
+          <tr>
+              <td>Last name:</td>
+              <td>{{ current_user.lastname }}</td>
+          </tr>
+          <tr>
+              <td>Address:</td>
+              <td>{{ current_user.address }}</td>
+          </tr>
+          <tr>
+              <td>Loyalty points:</td>
+              <td>{{ current_user.user_points }}</td>
+          </tr>
+      </table>
+  </div>
+
+  <div class="bookings">
+      <h3>Booked Dates</h3>
+      {% if bookings %}
+          <ul>
+              {% for booking in bookings %}
+                  <li>
+                      <h4>Date: {{ booking[0][0] }}</h4><h4>Num Tickets: {{ booking[1] }}</h4>
+                  </li>
+              {% endfor %}
+          </ul>
+      {% else %}
+          <p>You don't have any bookings yet</p>
+      {% endif %}
+  </div>
+
+  <a href="/manage_bookings" class="button">Manage Bookings</a>
+  <a href="/accessibility" class="button">Accessibility</a> 
+
+  <!-- Delete Account button with confirmation pop-up -->
+  <button onclick="confirmDelete()" class="button red">Delete Account</button> 
+</div>
+
+<script>
+    function confirmDelete() {
+        if (confirm("Are you sure you want to delete your account?")) {
+            window.location.href = "/delete-account";
+        }
+    }
+</script>
+
+{% endblock %}

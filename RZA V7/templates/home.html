@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul class="flashes">
+        <!-- Iterating over flash messages and displaying them as list items -->
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+</div>
+
+<div class="content">
+    <div class="welcometothezoo">
+        <h3>Welcome to the Zoo!</h3>
+        <p>Riget Zoo Adventures is an extraordinary hands-on zoo and working farm. The home of magnificent zoo animals including <strong>African Elephants, White Rhinos, Giraffes, Lions, Giant Anteaters, and Spectacled Bears.</strong> Prepare to be captivated by the diverse array of animals, boasting over 100 different species, all set within 100 acres of picturesque countryside. Embark on endless adventures in our thrilling playgrounds and navigate through Britain's Longest Hedge Maze!</p>
+        <p><strong>Riget Zoo Adventures is a multi-award-winning attraction,</strong> offering something for the whole family. Engage in interactive keeper talks on conservation, follow activity trails, indulge in adventurous play, conquer the hedge maze, and even have the opportunity to feed the friendly farm animals.</p>    
+        <img class="homeimg" src="static\images\homeimg1.jpg" alt="Picture of Lions">
+        <img class="homeimg" src="static\images\homeimg2.jpg" alt="Picture of Bears"> 
+    </div>
+
+    <div class="homepage-vid">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/oRDRfikj2z8?si=FRvApa3HXYuaQSCE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+</div>
+
+<img class = "zebrahome" src="static/images/zebrahomepg.png" alt ="Picute of sitting Zebra">
+<img class ="snakehome" src="static/images/snakehomepg.gif" alt ="Animation of snake">
+{% endblock %}

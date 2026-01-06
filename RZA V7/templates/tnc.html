@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+<html>
+<head>
+    <title>Business Terms & Conditions</title>
+    <style>
+        @font-face {
+            font-family: DK Brush;
+            src: url(BubblegumSans-Regular.ttf);
+        }
+
+        body {
+            font-family: DK Brush;
+            height: 100%;
+            margin: 0; /* Reset default margin */
+        }
+
+        .container {
+            width: 60%; /* Adjust width as needed */
+            margin: 10% auto; /* Center container */
+            padding: 20px;
+            background-color: #f266ab;
+            box-shadow: 3px 2px 2px black;
+            border: 2px solid black;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        .container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Business Terms & Conditions</h1>
+    <p>These are the terms and conditions of our business:</p>
+    <p>1. Payment must be made in full before services are rendered.</p>
+    <p>2. All products and services are subject to availability.</p>
+    <p>3. Any refunds or exchanges are subject to our refund policy.</p>
+</div>
+
+</body>
+</html>
+{% endblock %}

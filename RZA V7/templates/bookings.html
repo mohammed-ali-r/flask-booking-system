@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  font-family: DK Brush; 
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #f266ab; 
+  box-shadow: 3px 2px 2px black;
+}
+
+form {
+  margin-top: 0; 
+}
+
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-family: DK Brush; 
+}
+
+.button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: DK Brush; 
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.flashes {
+  list-style: none;
+  padding-top: 10;
+  padding-right: 20;
+  margin: 0;
+  font-family: DK Brush;
+}
+
+.flashes li {
+  background: #f4f4f4;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+</style>
+  
+
+  <br>
+  <div>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flashes">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+  </div>
+
+  <div class="container">
+    <h1>Bookings</h1>
+    <p>Reserve Tickets</p>
+    <form method="POST" action="/bookings">
+      <input type="date" name="dateChosen" placeholder="Choose A date">
+      <input type="number" name="numTickets" placeholder="Number of tickets" min=1 max=15>
+      <button class="button">Book</button>
+    </form>
+  </div>
+{% endblock %}

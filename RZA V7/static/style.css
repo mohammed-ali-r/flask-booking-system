@@ -1,0 +1,236 @@
+@font-face {
+    font-family: DK Brush;
+    src: url("/static/BubblegumSans-Regular.ttf");
+}
+
+
+body{
+    margin:0px;
+    background-color: #FFB84C;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.navbar
+{
+    background-color: #f266ab;
+    text-align: center;
+    text-decoration: none;
+    border: 4px solid black;
+    border-radius: 25px;
+    height: 100px;
+    display: flex;
+    width: 100%;
+    box-shadow: 3px 2px 2px black;
+    display: inline-block;
+    margin: 0 auto;
+    justify-content: center;
+    z-index: 1000;
+    
+
+}
+
+.navbar li{
+    display: inline-block;
+    text-decoration: none;
+    list-style: none;
+    text-align: center !important; 
+    padding-top: 10px!important;
+    margin:0 20px;
+    height:auto;
+    width: auto;
+    display: inline-block;
+    margin: 0 auto;
+    justify-content: center;
+    margin-top: 5px;
+    font: DK Brush;
+    z-index: 1000;
+
+    font-family: DK Brush;
+    
+}
+
+#nbcontent {
+    text-decoration: none;
+    color: #a459d1;
+    background-color: #2CD3E1;
+    font-size: 30px;
+    border: 2px solid black;
+    border-radius: 40px;
+    text-align: center;
+    padding: 12px 15px;
+    transition: ease-in-out 0.3s;
+    overflow: hidden;
+    z-index: 1000;
+    height: auto;
+    width: auto;
+    box-shadow: 1px 1px 1px black;
+    display: inline-block;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+#nbcontent:hover {
+    background-color: #5C8374;
+    color: black;
+}
+
+.navbar{
+    min-height: fit-content;
+}
+
+.navbar a:active{
+    background-color: white;
+}
+
+.Navbar-Logo{
+    height: auto;
+    width: 8%;
+    max-width: 10%;
+    float: left;
+    padding-left: 10px;
+    
+}
+
+.user-info
+{
+    float: right;
+    font-size: larger;
+    
+}
+
+.homeimg{
+    width: 600px;
+    height: auto;
+    border-radius: 40px;
+}
+
+.welcometothezoo img {
+    margin-bottom: 10px; 
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.welcometothezoo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #f266ab;
+    box-shadow: 3px 2px 2px black;
+    font-family: DK Brush;
+}
+
+.homepage-vid {
+    width: 580px; 
+    height: 335px; 
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #f266ab;
+    box-shadow: 3px 2px 2px black;
+    font-family: DK Brush;
+    position: absolute;
+    top: 75%;
+    right: 118px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcometothezoo p{
+    font-size: larger;
+    
+}
+    
+.welcometothezoo h3{
+    font-size: 80px;
+    color:#2CD3E1;
+    
+}
+    
+
+.footer {
+    background-color: #333; 
+    color: white; 
+    padding: 20px; 
+    border-top: 2px solid black; 
+    margin-top: 20px; 
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none; 
+    margin-right: 10px; 
+}
+
+
+.footer {
+    list-style: none;
+    font-family: DK Brush;
+}
+
+.zebrahome {
+    width: 200px; 
+    height: auto; 
+    position: absolute; 
+    top: 280px; 
+    left: 1250px; 
+}
+.snakehome {
+    width: 700px; 
+    height: auto; 
+    position: absolute; 
+    top: 1000px; 
+    left: 1080px; 
+}
+
+
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.flashes li {
+    background: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    font-family: DK Brush;
+}
+
+/* Footer styling */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-bottom: 90px; /* Adjust the padding to create space for the footer */
+}
+

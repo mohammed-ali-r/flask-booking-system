@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    /* Paste the CSS rules from the register page here */
+    @font-face {
+        font-family: DK Brush;
+        src: url(BubblegumSans-Regular.ttf);
+    }
+
+    body {
+        font-family: DK Brush;
+        background-color: #FFB84C;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 20px;
+        font-family: DK Brush;
+    }
+
+    .container {
+        max-width: 500px;
+        margin: 50px auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        font-family: DK Brush;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: #f266ab;
+        box-shadow: 3px 2px 2px black;
+        padding-bottom: 135px;
+    }
+
+    form {
+        margin-top: 135px;
+        font-family: DK Brush;
+    }
+
+    input[type="submit"] {
+        background-color: #ff3333; /* Change button color to red */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-family: DK Brush;
+        width: 100%;
+        margin-bottom: 10px; /* Add some bottom margin */
+    }
+
+    input[type="submit"]:hover {
+        background-color: #cc0000; /* Change button hover color to darker red */
+    }
+
+    .button-wrapper {
+        display: flex; /* Use flexbox */
+        justify-content: center; /* Center align horizontally */
+    }
+
+    .button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-family: DK Brush;
+        text-decoration: none; /* Remove underline from anchor tags */
+        width: 100%; /* Take up full width */
+        display: flex; /* Use flexbox */
+        justify-content: center; /* Center align horizontally */
+        align-items: center; /* Center align vertically */
+    }
+
+    .button:hover {
+        background-color: #45a049;
+    }
+
+    .center-text {
+        text-align: center; /* Center align text horizontally */
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Delete Account</h1>
+        <p class="center-text">Are you sure you want to delete your account? The animals would be sad to see you leave us.</p>
+        <form action="/delete-account" method="post">
+            <input type="submit" value="Yes, Delete My Account" class="button red">
+        </form>
+        <div class="button-wrapper">
+            <a href="/" class="button">Cancel</a> <!-- Link to go back to the home page -->
+        </div>
+    </div>
+</body>
+
+</html>
+{% endblock %}

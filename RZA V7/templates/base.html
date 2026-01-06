@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ridget Zoo Adventures</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/RZA Logo.png') }}">
+    <link id="pageStyle" rel="stylesheet" href="{{ url_for('static', filename='styles/one.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <li>
+            <a class="Logo" href="/"><img class="Navbar-Logo" src="{{ url_for('static', filename='images/RZA Logo.png') }}" alt="Navbar Logo"></a>
+            <a id="nbcontent" href="meetthezoo">Meet The Zoo</a>
+            <a id="nbcontent" href="bookings">Bookings</a>
+            <a id="nbcontent" href="visiting">Visiting</a>
+            <a id="nbcontent" href="account">Account</a>
+
+            <div class="user-info">
+                {% if current_user.is_authenticated %}
+                    <span class="welcome-message">Welcome, {{ current_user.firstname }}</span>
+                    <br><a id="logout" href="logout">Logout</a>
+                {% endif %}
+            </div>
+        </li>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+    <footer class="footer">
+        <p>&copy; 2024 Riget Zoo Adventures All rights reserved.</p>
+        <li>
+            <a id="ftcontent" href="aboutus">About us</a>
+            <a id="ftcontent" href="policy">Policy</a>
+            <a id="ftcontent" href="tnc">Terms and conditions</a>
+        </li>
+    </footer>
+
+    <script>
+        window.onload = function() {
+    var storedTheme = localStorage.getItem("styles");
+    if (storedTheme) {
+        swapStyleSheet(storedTheme, storedTheme);
+    }
+}
+        // textSize.js
+        var get_text_size = localStorage.getItem("font-size");
+        document.body.style.fontSize = get_text_size;
+        document.getElementById("t").style.fontSize = get_text_size;
+
+        function validateTextSize(input) {
+            if (input.value < 8) {
+                input.value = 8;
+            }
+            if (input.value > 24) {
+                input.value = 24;
+            }
+        }
+
+        // swapStyleSheet function
+        function swapStyleSheet(styles, id) {
+    var cssFile;
+    switch(id) {
+        case "a":
+            cssFile = "one.css";
+            break;
+        case "b":
+            cssFile = "two.css";
+            break;
+        case "c":
+            cssFile = "three.css";
+            break;
+        case "d":
+            cssFile = "four.css";
+            break;
+        default:
+            cssFile = "one.css"; // Default to 'one.css' if styles parameter is not recognized
+            break;
+    }
+    document.getElementById("pageStyle").setAttribute("href", "{{ url_for('static', filename='styles/') }}" + cssFile);
+    localStorage.setItem("styles", id);
+    }
+        
+    </script>
+</body>
+</html> 

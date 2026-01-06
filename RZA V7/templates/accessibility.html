@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    @font-face {
+        font-family: DK Brush;
+        src: url("{{ url_for('static', filename='BubblegumSans-Regular.ttf') }}");
+    }
+
+    body {
+        font-family: DK Brush;
+        margin: 0;
+        padding: 0;
+    }
+
+    #main {
+        width: 80%;
+        margin: 20px auto 0; 
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+
+    #header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    #navigation ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    #navigation ul li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    #navigation ul li a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    #navigation ul li a:hover {
+        color: #666;
+    }
+
+    .boxes {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .box {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #text_box {
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+
+    #textChange {
+        background-color: #008CBA;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        font-family: DK Brush;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #textChange:hover {
+        background-color: #005f7e;
+    }
+</style>
+
+<body id="t">
+    <div id="main">
+        <div id="header">
+            <h1>Accessibility Page</h1>
+        </div>
+
+        <div id="content">
+            <ul class="boxes">
+                <ul class="boxes">
+                    <li class="box" onclick="swapStyleSheet('default', 'a')">Default</li>
+                    <li class="box" onclick="swapStyleSheet('black-white', 'b')">Black/White</li>
+                    <li class="box" onclick="swapStyleSheet('white-black', 'c')">White/Black</li>
+                    <li class="box" onclick="swapStyleSheet('yellow-black', 'd')">Yellow/Black</li>
+                </ul>
+            </ul>
+            <div class="boxes">
+                <input type="number" id="text_box" value="12" min="8" max="24" oninput="validateTextSize(this)">
+                <button id="textChange" onclick="clicking()">Change Text</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var body_text = document.getElementById("t");
+        var get_text_size = localStorage.getItem("font-size");
+        document.body.style.fontSize = get_text_size;
+        document.getElementById("t").style.fontSize = get_text_size;
+        var style_sheets = localStorage.getItem("styles");
+
+        function clicking() {
+            var text_size = document.getElementById("text_box").value + "pt";
+            body_text.style.fontSize = text_size;
+            localStorage.setItem("font-size", text_size);
+        }
+
+        function swapStyleSheet(styles, id) {
+            var cssFile;
+            switch(styles) {
+                case "default":
+                    cssFile = "one.css";
+                    break;
+                case "black-white":
+                    cssFile = "two.css";
+                    break;
+                case "white-black":
+                    cssFile = "three.css";
+                    break;
+                case "yellow-black":
+                    cssFile = "four.css";
+                    break;
+                default:
+                    cssFile = "one.css"; // Default to 'one.css' if styles parameter is not recognized
+                    break;
+            }
+            document.getElementById("pageStyle").setAttribute("href", "{{ url_for('static', filename='styles/') }}" + cssFile);
+            localStorage.setItem("styles", id);
+        }
+
+        function validateTextSize(input) {
+            if (input.value < 8) {
+                input.value = 8;
+            }
+            if (input.value > 24) {
+                input.value = 24;
+            }
+        }
+    </script>
+</body>
+
+</html>
+{% endblock %}

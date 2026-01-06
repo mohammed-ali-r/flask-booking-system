@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+<html>
+<head>
+    <title>Visiting Ridget Zoo</title>
+    <style>
+        @font-face {
+            font-family: DK Brush;
+            src: url(BubblegumSans-Regular.ttf);
+        }
+
+        body {
+            font-family: DK Brush;
+            height: 100%;
+            margin: 0; /* Reset default margin */
+        }
+
+        .container {
+            width: 30%;
+            float: left;
+            padding: 20px;
+            background-color: #f266ab;
+            box-shadow: 3px 2px 2px black;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin-top: 5%;
+            margin-left: 3%;
+            text-align: center;
+            color: white;
+        }
+
+        .container h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .hotel {
+            width: 20%; 
+            float: right;
+            margin-right: 3%; 
+            margin-top: -12%; 
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Hotel Accommodation</h1>
+    <p>Experience comfort and convenience during your visit to Ridget Zoo Adventures by staying at our on-site hotel. Whether you're planning a weekend getaway or an extended stay, our cozy rooms and top-notch amenities ensure a relaxing and enjoyable stay for you and your family.</p>
+</div>
+
+<div class="container">
+    <h1>Educational Visits</h1>
+    <p>Discover the wonders of wildlife with our educational visits tailored for schools and colleges of all ages. Our experienced guides will lead students on an exciting journey through the zoo, providing interactive learning experiences and fascinating insights into conservation and biodiversity.</p>
+</div>
+
+<div class="container">
+    <h1>Promotional Offers</h1>
+    <p>Take advantage of our exclusive promotional offers and discounts to make the most of your visit to Ridget Zoo Adventures. From family packages to seasonal deals, there's something for everyone to enjoy at unbeatable prices. Don't miss out on the opportunity to create unforgettable memories with your loved ones!</p>
+</div>
+
+<div class="container">
+    <h1>Opening Times</h1>
+    <p>Plan your visit with ease! Our opening times are as follows:</p>
+    <p>Monday-Friday: 9:00 AM - 6:00 PM</p>
+    <p>Saturday-Sunday: 8:00 AM - 7:00 PM</p>
+</div>
+
+<img class="hotel" src="static/images/hotel.jpg" alt="Picture of hotel">
+
+</body>
+</html>
+{% endblock %}

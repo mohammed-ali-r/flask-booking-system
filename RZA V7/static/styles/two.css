@@ -1,0 +1,24 @@
+
+@import url("../style.css");
+
+body, #main, #navigation li, li a, li a:visited {
+    background-color: black;
+    color: white;
+}
+
+#main {
+    background-color: black;
+    color: white;
+}
+
+.container {
+    background-color: black !important;
+}
+
+#main {
+    background-color: black !important;
+}
+
+.container h1, .container h2, .container p {
+    color: white !important;
+}

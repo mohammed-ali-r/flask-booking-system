@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lost in the Zoo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='404.css') }}">
+</head>
+<style>
+@font-face {
+    font-family: DK Brush;
+    src: url(BubblegumSans-Regular.ttf);
+}
+
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #FFB84C;  /* Adjust colors if desired */
+  color: #FFF;
+  font-family: 'Varela Round', Sans-serif;
+  text-shadow: 0 30px 10px rgba(#000, .15);
+  font: DK Brush;
+}
+
+/* Main Content Styles */
+.main {
+  text-align: center;
+  z-index: 5;
+  font: DK Brush;
+}
+
+h1 {
+  font-size: 95px;
+  margin: 0;
+  font-family: DK Brush;
+ 
+}
+
+p {
+  font-size: 18px;
+  margin-top: 10px;
+  font: DK Brush;
+  font-family: DK Brush;
+}
+
+button {
+  background: linear-gradient(#EC5DC1,#D61A6F);
+  padding: 0 12px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 30px 15px rgba(#000, .15);
+  outline: none;
+  color: #FFF;
+  font: 400 16px/2.5 Nunito,'Varela Round', Sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 20px;
+  
+}
+
+</style>
+<body>
+  <div class="main">
+    <h1>404</h1>
+    <p>Looks like you're lost in the zoo!</p>
+    <p>Don't worry, we can help you find your way back.</p>
+    <button type="button" onclick="history.back()">Go Back</button>
+  </div>
+  
+
+</body>
+</html>

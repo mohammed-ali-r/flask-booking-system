@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* CSS for Login Page */
+            @font-face {
+                font-family: DK Brush;
+                src: url(BubblegumSans-Regular.ttf);
+            }
+
+        
+        body {
+            font-family: DK Brush;
+            background-color: #FFB84C;
+            margin: 0;
+            padding: 0;
+        }
+
+        h3 {
+            text-align: center;
+            margin-top: 20px;
+            font-family: DK Brush;
+        }
+
+        .container {
+    max-width: 500px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    font-family: DK Brush;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #f266ab;
+    box-shadow: 3px 2px 2px black;
+    padding-bottom: 165px;
+}
+
+
+        form {
+            margin-top: 165px;
+            font-family: DK Brush;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+            font-family: DK Brush;
+        }
+
+        .checkbox {
+            margin-bottom: 10px;
+            display: block;
+            font-family: DK Brush;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-family: DK Brush;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .flashes {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-family: DK Brush;
+        }
+
+        .flashes li {
+            background: #f4f4f4;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+
+        .register-button {
+            background-color: #f44336; /* Red color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+            font-family: DK Brush;
+            margin-top: 10px;
+        }
+
+        .register-button:hover {
+            background-color: #d32f2f; /* Darker red on hover */
+        }
+
+        .chamopng {
+    width: 400px; 
+    height: auto; 
+    position: absolute; 
+    top: 175px; 
+    left: 550px; 
+    z-index: 0;
+}
+    </style>
+</head>
+<body>
+    <!-- Heading for the login page -->
+    <h3>Login</h3>
+    <br>
+    <!-- Flash messages display area -->
+    <div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+            <!-- Iterating over flash messages and displaying them as list items -->
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+    </div>
+    <!-- Container for login form -->
+    <div class="container">
+        <!-- Form for user login -->
+        <form method="POST" action="#">
+            <!-- Input field for email -->
+            <input type="email" name="email" placeholder="Your Email" autofocus="">
+            <!-- Input field for password -->
+            <input type="password" name="password" placeholder="Your Password">
+            <!-- Checkbox for remembering login -->
+            <label class="checkbox">
+                <input type="checkbox" name="rememberMe">
+                Remember me
+            </label>
+            <!-- Button to submit login form -->
+            <button class="button" value="submit" type="submit">Login</button>
+        </form>
+        <!-- Button to navigate to the registration page -->
+        <div>
+            <a href="{{ url_for('register') }}"><button class="register-button">Register</button></a>
+        </div>
+    </div>
+
+    <!-- End of container -->
+    <img class = "chamopng" src="static\images\chamologin.png" alt ="Picute of Chameleon">
+{% endblock %}
+</body>
+</html>
